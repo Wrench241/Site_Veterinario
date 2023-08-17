@@ -1,96 +1,105 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patinhas - Banho e Tosa</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patinhas - Banho e Tosa</title>
 
-    <style>
-        body {
-          display: flex;
-          
-          flex-direction: column;
-            background-image: url("assets/imagens/5707ebda-ceb2-452b-b8fd-11e23f4dbe4e.jpg");
-            background-repeat: repeat;
-           
+  <style>
 
-        }
+    
+    #listaContainer {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      /* Alterado para 0 */
+      background-color: black;
+   
+   
+      width: 300px;
+      height: 100%;
+    }
 
-        #listaContainer {
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 0; /* Alterado para 0 */
-            background-color: black;
-            width: 300px;
-            height: 100%;
-        }
+    #listaContainer.active {
+      left: 0;
+    }
 
-        #listaContainer.active {
-            left: 0;
-        }
+    .container {
+      
+     
+    }
 
-        .container {
-            position: absolute;
-        }
+    .imagecenter {
+      position: absolute;
+      
+    }
 
-        .imagecenter {
-            position: absolute;
-        }
+    .image {
+      float: left;
+      margin: 10px;
+      box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.5);
+    }
 
-        .image {
-            float: left;
-            margin: 10px;
-            box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.5);
-        }
+   
 
-        .image:nth-child(4n+1) {
-            clear: left;
-        }
-
-        .button-container {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
-    </style>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    .button-container {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    .div-fotos {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-image: url("assets/imagens/5707ebda-ceb2-452b-b8fd-11e23f4dbe4e.jpg");
+      background-repeat: repeat;
+    
+    }
+    .image:nth-child(3n+1) {
+      clear: left;
+      
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body class="mat-typography">
-  
-    
-    <div class="container">
-      
-      <mat-toolbar>
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-          <mat-icon>menu</mat-icon>
-        </button>
-        <span>Menu</span>
-        <span class="example-spacer"></span>
-        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-          <mat-icon>favorite</mat-icon>
-        </button>
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-          <mat-icon>share</mat-icon>
-        </button>
-      </mat-toolbar>
-      
-        <img src="assets/imagens/IMG_9942.jpg" alt="1" class="image" height="205" width="200">
-        <img src="assets/imagens/IMG_9943.jpg" alt="2" class="image" height="205" width="200">
-        <img src="assets/imagens/IMG_9944.jpg" alt="3" class="image" height="205" width="200">
-        <img src="assets/imagens/IMG_9945.jpg" alt="4" class="image" height="205" width="200">
-        <img src="assets/imagens/IMG_9946.jpg" alt="5" class="image" height="205" width="200">
-        <img src="assets/imagens/IMG_9947.jpg" alt="6" class="image" height="205" width="200"><br>
-        <img src="assets/imagens/IMG_9948.jpg" alt="7" class="image" height="205" width="200">
-        <img src="assets/imagens/IMG_9949.jpg" alt="8" class="image" height="205" width="200"><br>
-        <img src="assets/imagens/IMG_9950.jpg" alt="9" class="image" height="205" width="200">
-        <img src="assets/imagens/IMG_9951.jpg" alt="10" class="image" height="205" width="200">
+
+  <div class="container">
+    <mat-toolbar>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Menu</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>share</mat-icon>
+      </button>
+    </mat-toolbar>
     </div>
-    
+  <div class="div-fotos">
+
+    <img src="assets/imagens/IMG_9942.jpg" alt="1" class="image" height="205" width="200">
+    <img src="assets/imagens/IMG_9943.jpg" alt="2" class="image" height="205" width="200">
+    <img src="assets/imagens/IMG_9944.jpg" alt="3" class="image" height="205" width="200">
+    <img src="assets/imagens/IMG_9945.jpg" alt="4" class="image" height="205" width="200">
+    <img src="assets/imagens/IMG_9946.jpg" alt="5" class="image" height="205" width="200">
+    <img src="assets/imagens/IMG_9947.jpg" alt="6" class="image" height="205" width="200">
+    <img src="assets/imagens/IMG_9948.jpg" alt="7" class="image" height="205" width="200">
+    <img src="assets/imagens/IMG_9949.jpg" alt="8" class="image" height="205" width="200">
+    <img src="assets/imagens/IMG_9950.jpg" alt="9" class="image" height="205" width="200">
+    <img src="assets/imagens/IMG_9951.jpg" alt="10" class="image" height="205" width="200">
+  </div>
+
 </body>
 
 </html>

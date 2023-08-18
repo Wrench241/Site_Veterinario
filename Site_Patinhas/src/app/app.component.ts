@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'teste';
+  listavisivel: boolean = false;
+showFiller: any;
+
+
+  exibirlista() {
+    this.listavisivel = !this.listavisivel;
+  }
 }

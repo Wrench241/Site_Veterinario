@@ -63,6 +63,7 @@
       clear: left;
       
     }
+    
   </style>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
@@ -73,11 +74,24 @@
 
   <div class="container">
     <mat-toolbar>
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-        <mat-icon>menu</mat-icon>
-      </button>
+      <mat-drawer-container class="example-container" autosize="">
+        <mat-drawer #drawer class="example-sidenav" mode="side">
+          <p>Auto-resizing sidenav</p>
+          <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+      <button (click)="showFiller = !showFiller" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+             
+       </button>
+        </mat-drawer>
+        <div class="example-sidenav-content">
+          <button mat-icon-button class="exemple" aria-label="a" (click)="drawer.toggle()">
+            <mat-icon>menu</mat-icon>
+          </button>
+        </div>
+      
+      </mat-drawer-container>
       <span>Menu</span>
       <span class="example-spacer"></span>
+
       <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
         <mat-icon>favorite</mat-icon>
       </button>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,8 +7,6 @@
   <title>Patinhas - Banho e Tosa</title>
 
   <style>
-
-    
     #listaContainer {
       display: none;
       position: absolute;
@@ -17,8 +14,8 @@
       left: 0;
       /* Alterado para 0 */
       background-color: black;
-   
-   
+
+
       width: 300px;
       height: 100%;
     }
@@ -27,14 +24,11 @@
       left: 0;
     }
 
-    .container {
-      
-     
-    }
+    .container {}
 
     .imagecenter {
       position: absolute;
-      
+
     }
 
     .image {
@@ -43,27 +37,47 @@
       box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.5);
     }
 
-   
+
 
     .button-container {
       position: absolute;
       top: 20px;
       right: 20px;
     }
+
     .div-fotos {
+
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       background-image: url("assets/imagens/5707ebda-ceb2-452b-b8fd-11e23f4dbe4e.jpg");
       background-repeat: repeat;
-    
+
     }
+
     .image:nth-child(3n+1) {
       clear: left;
-      
+
     }
-    
+
+    .sidenav {
+      position: absolute;
+      height: 200%;
+      width: 220px;
+      margin: -15px;
+    }
+
+    .container-bar {
+      position: absolute;
+      width: 100%;
+      bottom: 100px;
+    }
+
+    p {
+      margin: 10px;
+    }
+
   </style>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
@@ -74,34 +88,39 @@
 
   <div class="container">
     <mat-toolbar>
-      <mat-drawer-container class="example-container" autosize="">
-        <mat-drawer #drawer class="example-sidenav" mode="side">
-          <p>Auto-resizing sidenav</p>
-          <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
-      <button (click)="showFiller = !showFiller" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-             
-       </button>
-        </mat-drawer>
-        <div class="example-sidenav-content">
-          <button mat-icon-button class="exemple" aria-label="a" (click)="drawer.toggle()">
-            <mat-icon>menu</mat-icon>
-          </button>
-        </div>
-      
-      </mat-drawer-container>
-      <span>Menu</span>
+
+      <mat-drawer #drawer class="sidenav" mode="side">
+        <br><br>
+        <p>Redes sociais</p>
+        <p>Localização</p>
+        <p>Catálogo</p>
+        <p>Contato</p>
+        <p>Sobre</p>
+        
+      </mat-drawer>
+      <div class="example-sidenav-content">
+        <button class="button01" (click)="drawer.toggle()" (click)="showFiller = !showFiller" mat-icon-button>
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+
+
+
+      <span class="menu">Menu</span>
       <span class="example-spacer"></span>
 
-      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <button (click)="directionURL()" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
         <mat-icon>favorite</mat-icon>
       </button>
       <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
         <mat-icon>share</mat-icon>
       </button>
     </mat-toolbar>
-    </div>
+  </div>
   <div class="div-fotos">
+    <mat-drawer-container class="containerbar">
 
+    </mat-drawer-container>
     <img src="assets/imagens/IMG_9942.jpg" alt="1" class="image" height="205" width="200">
     <img src="assets/imagens/IMG_9943.jpg" alt="2" class="image" height="205" width="200">
     <img src="assets/imagens/IMG_9944.jpg" alt="3" class="image" height="205" width="200">

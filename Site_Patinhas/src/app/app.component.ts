@@ -14,4 +14,9 @@ showFiller: any;
   exibirlista() {
     this.listavisivel = !this.listavisivel;
   }
+
+  directionURL() {
+    window.location.href='https://www.instagram.com';
+  }
+
 }

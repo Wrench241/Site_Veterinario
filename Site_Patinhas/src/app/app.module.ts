@@ -8,10 +8,12 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SobreComponent } from './pages/sobre/sobre.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SobreComponent
   ],
   imports: [
     BrowserModule,

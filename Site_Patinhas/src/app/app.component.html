@@ -24,8 +24,6 @@
       left: 0;
     }
 
-    .container {}
-
     .imagecenter {
       position: absolute;
 
@@ -75,9 +73,12 @@
     }
 
     p {
-      margin: 10px;
+      margin: 15px;
     }
 
+    .div-sobre {
+      letter-spacing: -1px;
+    }
   </style>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
@@ -90,13 +91,21 @@
     <mat-toolbar>
 
       <mat-drawer #drawer class="sidenav" mode="side">
+
         <br><br>
         <p>Redes sociais</p>
         <p>Localização</p>
         <p>Catálogo</p>
         <p>Contato</p>
-        <p>Sobre</p>
         
+        <p><button mat-raised-button><a routerLink="/sobre">
+            Sobre
+          </a></button></p>
+          
+        <div class="div-sobre">
+          
+        </div>
+
       </mat-drawer>
       <div class="example-sidenav-content">
         <button class="button01" (click)="drawer.toggle()" (click)="showFiller = !showFiller" mat-icon-button>
@@ -104,12 +113,11 @@
         </button>
       </div>
 
-
-
       <span class="menu">Menu</span>
       <span class="example-spacer"></span>
 
-      <button (click)="directionURL()" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <button (click)="directionURL()" mat-icon-button class="example-icon favorite-icon"
+        aria-label="Example icon-button with heart icon">
         <mat-icon>favorite</mat-icon>
       </button>
       <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">

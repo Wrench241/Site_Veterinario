@@ -69,7 +69,8 @@
     .container-bar {
       position: absolute;
       width: 100%;
-      bottom: 100px;
+      margin-top: -200px;
+
     }
 
     p {
@@ -90,14 +91,12 @@
   <div class="container">
     <mat-toolbar>
 
-      <mat-drawer #drawer class="sidenav" mode="side">
+      <mat-drawer #drawer class="sidenav" mode="side" style="margin-top: 64px;">
 
         <br><br>
-        <p>Redes sociais</p>
-        <p>Localização</p>
-        <p>Catálogo</p>
-        <p>Contato</p>
-        
+        <mat-nav-list>
+          <a mat-list-item routerLink="." *ngFor="let nav of">{{nav}}</a>
+        </mat-nav-list>
         <p><button mat-raised-button><a routerLink="/sobre">
             Sobre
           </a></button></p>

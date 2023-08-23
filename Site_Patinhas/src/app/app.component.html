@@ -35,36 +35,74 @@
       padding: 20px;
       border-radius: 8px;
       text-align: center;
-      max-height: 100%;
+      max-height: 100vh;
       max-width: 100%;
       background-image: url("assets/imagens/5707ebda-ceb2-452b-b8fd-11e23f4dbe4e.jpg");
       background-repeat: repeat;
     }
 
+
     .sidenav {
       position: absolute;
-      height: 100%;
+      height: 106%;
       width: 220px;
-      margin: -15px;
-    }
-
-    .container-bar {
-      position: relative;
-      width: 100%;
-      margin-top: -200px;
-
+      margin-top: 64px;
+      margin-left: -15px;
     }
 
     p {
       margin: 15px;
     }
 
-    .div-sobre {
-      letter-spacing: -1px;
-    }
-
     .button01 {
       margin-left: -13px;
+    }
+
+    mat-toolbar {
+      background-color: white;
+      color: black;
+
+    }
+
+    .border-white {
+      border: 1px solid black;
+    }
+
+    .side-nav-content {
+      color: black;
+      width: 200px;
+      margin-left: 7px;
+      margin-right: 10px;
+      margin-top: 10px;
+    }
+
+    .nav-list {
+      list-style: none;
+      height: 100%;
+      padding: 0%;
+      margin-bottom: 0%;
+    }
+
+    .nav-list-item {
+      display: flex;
+      height: 50px;
+      align-items: center;
+    }
+
+    .nav-list-item:hover {
+      background-color: rgba(207, 207, 207, 0.705);
+      border-radius: 13px;
+    }
+
+    .nav-list-item span {
+      width: 170px;
+      text-transform: capitalize;
+      margin-left: 10px;
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
     }
   </style>
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -75,22 +113,23 @@
 <body class="mat-typography">
 
   <div class="container">
+    <mat-drawer-container class="containerbar">
+
+    </mat-drawer-container>
     <mat-toolbar color="primary">
 
-      <mat-drawer #drawer class="sidenav" mode="side" style="margin-top: 64px;">
-
-        <br><br>
-        <mat-nav-list>
-          <a mat-list-item routerLink="." *ngFor="let nav of">{{nav}}</a>
-        </mat-nav-list>
-        <p><button mat-raised-button><a routerLink="/sobre">
-              Sobre
-            </a></button></p>
-
-        <div class="div-sobre">
-
+      <mat-drawer #drawer class="sidenav" mode="side">
+        <div class="side-nav-content">
+          <br><br>
+          <ul class="nav-list" style="margin-top: -50px;">
+            <li class="nav-list-item" *ngFor="let item of list">
+              <i></i>
+              <span>
+                <a href="#">{{item.name}}</a>
+              </span>
+            </li>
+          </ul>
         </div>
-
       </mat-drawer>
       <div class="example-sidenav-content">
         <button class="button01" (click)="drawer.toggle()" (click)="showFiller = !showFiller" mat-icon-button>
@@ -111,9 +150,7 @@
     </mat-toolbar>
   </div>
   <div class="div-fotos">
-    <mat-drawer-container class="containerbar">
 
-    </mat-drawer-container>
     <img src="assets/imagens/IMG_9942.jpg" alt="1" class="image" height="205" width="200">
     <img src="assets/imagens/IMG_9943.jpg" alt="2" class="image" height="205" width="200">
     <img src="assets/imagens/IMG_9944.jpg" alt="3" class="image" height="205" width="200"><br>
